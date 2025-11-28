@@ -1,0 +1,71 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pyc
+*.pytest_cache/
+.python-version
+.venv/
+venv/
+env/
+
+# Virtual environment folders
+*/.venv/
+*/venv/
+
+# Byte-compiled / cache
+**/__pycache__/
+
+# -------------------------
+# FastAPI / Backend
+# -------------------------
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
+backend/.ruff_cache/
+backend/.env
+backend/env/
+backend/instance/
+backend/coverage.xml
+
+# SQLite (if used for tests)
+*.db
+*.sqlite3
+
+# -------------------------
+# Node / Frontend
+# -------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.production.local
+frontend/.env.test.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------
+# OS / Editor junk
+# -------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# -------------------------
+# Docker / Compose
+# -------------------------
+postgres_data/
+*.pid
