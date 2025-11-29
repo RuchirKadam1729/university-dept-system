@@ -59,13 +59,16 @@ const GradeManagement: React.FC = () => {
       return;
     }
     try {
-      const response = await http.post(
-        `/api/grades/gradesheet/generate/?student_roll_number=${queryRoll}&semester_id=${querySemester}`
-      );
+      // FIXED: Send as JSON body, not query params
+      const response = await http.post('/api/grades/gradesheet/generate/', {
+        student_roll_number: queryRoll,
+        semester_id: querySemester
+      });
       setGradeSheet(response.data);
       alert(`Grade Sheet Generated! GPA: ${response.data.gpa}`);
     } catch (error: any) {
-      alert(`Error: ${error.response?.data?.detail || 'Failed to generate grade sheet'}`);
+      const message = error?.response?.data?.detail || error.message || 'Failed to generate grade sheet';
+      alert(`Error: ${message}`);
     }
   };
 
